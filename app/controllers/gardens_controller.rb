@@ -22,6 +22,12 @@ class GardensController < ApplicationController
     end
   end
 
+  def destroy
+    @garden = Garden.find(params[:id])
+    @garden.destroy
+    redirect_to garden_path(@garden)
+  end
+
   private
 
   def garden_params
